@@ -1,0 +1,117 @@
+<header id="header" class="relv">
+  <div class="container">
+    <a id="logo" href="index.html"><img src="assets/images/bestco.png"  alt=""/></a>
+    <div class="logo-text">What are you the Best@?</div>
+    <a class="btn upload_btn fancybox logged" href="#popup_box" *ngIf="isLogin"><span>UPLOAD AN IMAGE OR VIDEO </span></a>
+    <a class="btn upload_btn signin fancybox"  *ngIf="!isLogin"  (click)="open(content)"><span>NEW USER? SIGN IN NOW</span></a>
+
+    <a id="menu_trigger" href="#"><img src="assets/images/menu.png"  alt=""/></a>
+    <a id="close_trigger" href="#"><img src="assets/images/menu.png"  alt=""/></a>
+    <nav id="site_menu" class="clearfix">
+      <div class="container">
+        <ul>
+          <li class="category active"><a href="#">CATEGORIES</a>
+            <div class="category_drop clearfix">
+              <div class="catd_section text-center">
+                <div class="catd_title">
+                  Categories
+                </div>
+                <img src="assets/images/tie2.png"  alt=""/>
+              </div>
+              <div class="catd_section">
+                <ul>
+                  <li>
+                    <a href="subpage.html">Sports</a>
+                    <ul class="mCustomScrollbar">
+                      <li>
+                        <a href="subpage.html">Category name</a>
+                        <ul class="mCustomScrollbar"  >
+                          <li><a href="subpage.html">Category </a></li>
+                          <li><a href="subpage.html">Category fdfd fdfdf </a></li>
+                          <li><a href="subpage.html">Categoryfdfd fdfd </a></li>
+                          <li><a href="subpage.html">Category fdfdfd</a></li>
+                          <li><a href="subpage.html">Category ff fdfdfd</a></li>
+                          <li><a href="subpage.html">Category name</a></li>
+                          <li><a href="subpage.html">Category name</a></li>
+                          <li><a href="subpage.html">Category </a></li>
+                          <li><a href="subpage.html">Category name</a></li>
+                          <li><a href="subpage.html">Category </a></li>
+                          <li><a href="subpage.html">Category name</a></li>
+                          <li><a href="subpage.html">Category </a></li>
+                          <li><a href="subpage.html">Category name</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="subpage.html">Category name</a>
+                        <ul class="mCustomScrollbar"  >
+                          <li><a href="subpage.html">Category name</a></li>
+
+                        </ul>
+                      </li>
+                      <li><a href="subpage.html">Category name</a></li>
+                      <li><a href="subpage.html">Category name</a></li>
+                      <li><a href="subpage.html">Category namef fdffdf</a></li>
+                      <li><a href="subpage.html">Category name</a></li>
+                      <li><a href="subpage.html">Category name fd</a></li>
+                      <li><a href="subpage.html">Category  </a></li>
+                      <li><a href="subpage.html">Category    </a></li>
+                      <li><a href="subpage.html">Category  </a></li>
+                      <li><a href="subpage.html">Category name</a></li>
+                      <li><a href="subpage.html">Category name</a></li>
+                      <li><a href="subpage.html">Category name</a></li>
+                      <li><a href="subpage.html">Category  fdfd </a></li>
+                      <li><a href="subpage.html">Category name</a></li>
+                      <li><a href="subpage.html">Category fd </a></li>
+                    </ul>
+                  </li>
+                  <li><a href="subpage.html">Fitness</a></li>
+                  <li><a href="subpage.html">Dance</a></li>
+                  <li><a href="subpage.html">Fashion</a></li>
+                  <li><a href="subpage.html">Singing</a></li>
+
+                </ul>
+              </div>
+
+            </div>
+          </li>
+          <li class="hottest"><a href="#">HOTTEST</a></li>
+          <li class="fanfeed"><a href="#">FAN FEED</a></li>
+          <li class="pioneer"><a href="#">PIONEERS</a></li>
+          <li class="wc"><a href="challengers.html">WEEKLY CHALLENGE</a></li>
+        </ul>
+        <div class="social_icons">
+          <a href="#"><img src="assets/images/fb.png"  alt=""/></a>
+          <a href="#"><img src="assets/images/in.png"  alt=""/></a>
+          <a href="#"><img src="assets/images/twitter.png"  alt=""/></a>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+</header>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Login</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form action="/action_page.php">
+      <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" id="email">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd">
+      </div>
+      <!--<div class="form-check">-->
+        <!--<label class="form-check-label">-->
+          <!--<input class="form-check-input" type="checkbox"> Remember me-->
+        <!--</label>-->
+      <!--</div>-->
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+</ng-template>
