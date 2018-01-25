@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {AuthService} from '../../services/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,7 +8,10 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class HeaderComponent implements OnInit {
   closeResult: string;
-  constructor(private modalService: NgbModal) { }
+  onlogin (fromData) {
+   this.auth.login (fromData);
+  }
+  constructor(private modalService: NgbModal, private auth: AuthService) { }
   open(content) {
     this.modalService.open(content).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
