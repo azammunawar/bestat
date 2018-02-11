@@ -28,17 +28,18 @@ export class AuthService {
   }
 
   login(fromData): any {
-    const options = {
-      headers: new HttpHeaders({
-        'Accept':  'application/json',
-        'Content-Type':  'application/json'
-      })
-    };
-    console.log('body', fromData);
-    this.http.post('http://localhost:8000/login', JSON.stringify(fromData), options ).subscribe(data => {
-      console.log('data', data);
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Accept':  'application/json',
+    //     'Content-Type':  'application/json'
+    //   })
+    // };
+    // console.log('body', fromData);
+    // this.http.post('http://localhost:8000/login', fromData).subscribe(data => {
+    //   console.log('data', data);
 
-    });
+    // });
+    this.loginstatus.next(true);
     // sample get req
     // this.http.get('http://localhost:8000').subscribe(data => {
     //   console.log('data', data);
