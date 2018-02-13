@@ -8,13 +8,15 @@ import { AppComponent } from './pages/landingPage/app.component';
 import { HeaderComponent } from './sharedComponents/header/header.component';
 import { SidebarComponent } from './sharedComponents/sidebar/sidebar.component';
 import { AuthService } from './services/auth.service';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    HomePageComponent
 
   ],
   imports: [

@@ -26,7 +26,9 @@ export class AuthService {
     }
 
   }
-
+  getpost (): any {
+    return this.http.get('http://localhost:8000/get_posts');
+  }
   login(fromData): any {
     // const options = {
     //   headers: new HttpHeaders({
