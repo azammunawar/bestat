@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   private modal;
 
   onlogin(fromData) {
+    console.log('formdata', fromData);
     this.modal.close();
     this.auth.login(fromData);
   }
