@@ -11,11 +11,21 @@ export class HeaderComponent implements OnInit {
   closeResult: string;
   private isLogin;
   private modal;
-
+  loginErros;
   onlogin(fromData) {
-    console.log('formdata', fromData);
-    this.modal.close();
-    this.auth.login(fromData);
+    this.auth.login(fromData).then((res) =>{
+      this.loginErros = [];
+      if ( res.status === 200 ) {
+        localStorage.setItem('api_key', res.api_key);
+        this.auth.loginstatus.next(true);
+        this.modal.close();
+      } else {
+        Object.keys(res).forEach((value, index) => {
+          this.loginErros.push(res[value]);
+        });
+
+      }
+    });
   }
 
   constructor(private modalService: NgbModal, private auth: AuthService) {

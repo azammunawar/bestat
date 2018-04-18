@@ -95,6 +95,9 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-danger" *ngFor="let error of loginErros">{{error}}</li>
+  </ul>
   <div class="modal-body">
     <form #loginForm="ngForm" (ngSubmit)="onlogin(loginForm.value)">
       <div class="form-group">
