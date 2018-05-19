@@ -11,19 +11,20 @@ export class HeaderComponent implements OnInit {
   closeResult: string;
   private isLogin;
   private modal;
-  loginFailed = false;
-
+  loginErros;
   onlogin(fromData) {
-    this.auth.login(fromData).then((data) => {
-      if(data.status == 200) {
-        this.modal.close();
-        localStorage.setItem('api_key', data.api_key);
+    this.auth.login(fromData).then((res) =>{
+      this.loginErros = [];
+      if ( res.status === 200 ) {
+        localStorage.setItem('api_key', res.api_key);
         this.auth.loginstatus.next(true);
-      }
-      else {
-        this.loginFailed = true;
-      }
+        this.modal.close();
+      } else {
+        Object.keys(res).forEach((value, index) => {
+          this.loginErros.push(res[value]);
+        });
 
+      }
     });
   }
 

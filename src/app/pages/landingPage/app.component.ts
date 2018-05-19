@@ -8,7 +8,7 @@ import {AuthService} from '../../services/auth.service';
 export class AppComponent implements OnInit{
   isLogin= false;
   constructor(private auth: AuthService ) {
-
+    this.auth.islogin();
   }
 
   ngOnInit() {

@@ -8,15 +8,6 @@ export class AuthService {
 
   constructor(private http: HttpClient) {
   }
-
-  // private serializeObj(obj) {
-  //   const result = [];
-  //   for (const property in obj) {
-  //     result.push(encodeURIComponent(property) + '=' + encodeURIComponent(obj[property]));
-  //   }
-  //   return result.join('&');
-  // }
-
   islogin(): any {
     const userLogin = localStorage.getItem('api_key');
     if (userLogin) {
@@ -30,7 +21,6 @@ export class AuthService {
     return this.http.get('http://localhost:8000/get_posts');
   }
   login(fromData): any {
-
     return this.http.post('http://localhost:8000/login', fromData).toPromise().then(data => {
       return data;
     });

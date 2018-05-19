@@ -2,7 +2,7 @@
   <div class="container">
     <a id="logo" href="index.html"><img src="assets/images/bestco.png"  alt=""/></a>
     <div class="logo-text">What are you the Best@?</div>
-    <a class="btn upload_btn fancybox" href="#popup_box" *ngIf="isLogin"><span>UPLOAD AN IMAGE OR VIDEO </span></a>
+    <a class="btn upload_btn fancybox" (click)="open(createAPost)" *ngIf="isLogin"><span>UPLOAD AN IMAGE OR VIDEO </span></a>
     <a class="btn upload_btn signin fancybox"  *ngIf="!isLogin"  (click)="open(content)"><span>NEW USER? SIGN IN NOW</span></a>
 
     <a id="menu_trigger" href="#"><img src="assets/images/menu.png"  alt=""/></a>
@@ -95,6 +95,9 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-danger" *ngFor="let error of loginErros">{{error}}</li>
+  </ul>
   <div class="modal-body">
     <form #loginForm="ngForm" (ngSubmit)="onlogin(loginForm.value)">
       <div class="alert alert-danger" *ngIf="loginFailed">
@@ -118,3 +121,28 @@
   </div>
 
 </ng-template>
+<ng-template #createAPost let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Create a Post</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <ul class="list-group">
+  </ul>
+  <div class="modal-body">
+    <form #postForm="ngForm" (ngSubmit)="createPost(postForm.value)">
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" class="form-control"  id="description"  [(ngModel)]="postForm.description" name="description"    >
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="file" class="form-control" name="file" [(ngModel)]="postForm.file" >
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+</ng-template>
+

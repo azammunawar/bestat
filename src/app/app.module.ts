@@ -12,6 +12,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PostFilterPipe } from './post-filter.pipe';
 import { PostFilter2Pipe } from './post-filter-2.pipe';
 import { PostFilter3Pipe } from './post-filter-3.pipe';
+// import { Ng4FilesModule } from './ng4-files';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { PostFilter3Pipe } from './post-filter-3.pipe';
     AppRoutingModule,
     FormsModule,
     NgbModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    // Ng4FilesModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
