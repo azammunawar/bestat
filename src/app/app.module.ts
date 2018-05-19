@@ -9,6 +9,9 @@ import { HeaderComponent } from './sharedComponents/header/header.component';
 import { SidebarComponent } from './sharedComponents/sidebar/sidebar.component';
 import { AuthService } from './services/auth.service';
 import { HomePageComponent } from './home-page/home-page.component';
+import { PostFilterPipe } from './post-filter.pipe';
+import { PostFilter2Pipe } from './post-filter-2.pipe';
+import { PostFilter3Pipe } from './post-filter-3.pipe';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { HomePageComponent } from './home-page/home-page.component';
     AppComponent,
     HeaderComponent,
     SidebarComponent,
-    HomePageComponent
+    HomePageComponent,
+    PostFilterPipe,
+    PostFilter2Pipe,
+    PostFilter3Pipe
 
   ],
   imports: [

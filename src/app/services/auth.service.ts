@@ -30,21 +30,16 @@ export class AuthService {
     return this.http.get('http://localhost:8000/get_posts');
   }
   login(fromData): any {
-    // const options = {
-    //   headers: new HttpHeaders({
-    //     'Accept':  'application/json',
-    //     'Content-Type':  'application/json'
-    //   })
-    // };
-    // console.log('body', fromData);
-    // this.http.post('http://localhost:8000/login', fromData).subscribe(data => {
-    //   console.log('data', data);
 
-    // });
-    this.loginstatus.next(true);
-    // sample get req
-    // this.http.get('http://localhost:8000').subscribe(data => {
-    //   console.log('data', data);
-    // });
+    return this.http.post('http://localhost:8000/login', fromData).toPromise().then(data => {
+      return data;
+    });
+
+  }
+  createPost (postData) {
+    console.log('fromData', postData);
+    return this.http.post('http://localhost:8000/create-post', postData).toPromise().then((data) => {
+      console.log('data', data);
+    })
   }
 }

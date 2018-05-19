@@ -1,99 +1,40 @@
 <div id="site_bar" class="mCustomScrollbar">
-  <div id="activities" >
-    <div id="s_form" class="relv">
-      <form>
-        <input type="text" placeholder="Search FOR ANYTHING">
-        <input type="submit" value="">
-      </form>
-    </div>
-    <div id="notifications">
-      <div class="activity_name">NOTIFICATIONS</div>
-      <a class="clearall_activity" href="#">CLEAR ALL</a>
-      <div class="clear"></div>
-      <div class="activity_list">
-        <div class="mCustomScrollbar">
-          <div class="activity clearfix">
-            <div class="usr_img"><img src="assets/images/actvity_img.png" alt=""></div>
-            <div class="notification">
-              <span class="user-name"> Mark P.</span> add an Image into Worlda
-              <span class="date">Today, 10:30 PM</span>                        <span class="remove"></span>
-            </div>
-          </div>
-          <div class="activity clearfix">
-            <div class="usr_img"><img src="assets/images/actvity_img.png" alt=""></div>
-            <div class="notification">
-              <span class="user-name"> Mark P.</span> add an Image into Worlda
-              <span class="date">Today, 10:30 PM</span>                        <span class="remove"></span>
-            </div>
-          </div>
-          <div class="activity clearfix">
-            <div class="usr_img"><img src="assets/images/actvity_img.png" alt=""></div>
-            <div class="notification">
-              <span class="user-name"> Mark P.</span> add an Image into Worlda
-              <span class="date">Today, 10:30 PM</span>                        <span class="remove"></span>
-            </div>
-          </div>
-          <div class="activity clearfix">
-            <div class="usr_img"><img src="assets/images/actvity_img.png" alt=""></div>
-            <div class="notification">
-              <span class="user-name"> Mark P.</span> add an Image into Worlda
-              <span class="date">Today, 10:30 PM</span>                        <span class="remove"></span>
-            </div>
-          </div>
-        </div>
-        <div class="seemore"><a href="">See All</a></div>
-      </div>
-    </div>
-    <div id="messages">
-      <div class="activity_name">MESSAGES</div>
-      <a class="clearall_activity" href="#">CLEAR ALL</a>
-      <div class="clear"></div>
-      <div class="message_list">
-        <div class="message selected clearfix">
-          <div class="check custom_inputs">
-            <input id="1" type="checkbox" name="radio" value="1" >
-            <label for="1"><span>&nbsp;</span></label>
-          </div>
-          <div class="mesage-head">FTP Credentials<span class="circle active"></span></div>
-          <div class="message-content">
-            Man, did Pam tell you about fake website for dwilight already, i think
-          </div>
-
-        </div>
-        <div class="message clearfix">
-          <div class="check custom_inputs">
-            <input id="1" type="checkbox" name="radio" value="1" checked="checked">
-            <label for="1"><span>&nbsp;</span></label>
-          </div>
-          <div class="mesage-head">FTP Credentials<span class="circle"></span></div>
-          <div class="message-content">
-            Man, did Pam tell you about fake website for dwilight already, i think
-          </div>
-
-        </div>
-        <div class="message clearfix">
-          <div class="check custom_inputs">
-            <input id="1" type="checkbox" name="radio" value="1" checked="checked">
-            <label for="1"><span>&nbsp;</span></label>
-          </div>
-          <div class="mesage-head">FTP Credentials<span class="circle"></span></div>
-          <div class="message-content">
-            Man, did Pam tell you about fake website for dwilight already, i think
-          </div>
-
-        </div>
-
-
-
-        <div class="seemore"><a href="">See All</a></div>
-      </div>
-    </div>
-  </div>
   <div class="fl">
     <div id="user_img"><a href="profile.html"><img src="assets/images/userno.jpg"  alt=""/></a> </div>
-    <a class="search-icon icon" href="#">&nbsp;</a>
+    <a class="search-icon icon" href="#" (click)="open(content)">&nbsp;</a>
     <a class="message-icon icon" href="message.html">&nbsp;</a>
     <a class="alarm-icon icon" href="notification.html">&nbsp;</a>
     <a class="setting-icon icon" href="#">&nbsp;</a>
   </div>
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Create a Post</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form #PostForm="ngForm" (ngSubmit)="createPost(PostForm.value)" enctype="multipart/form-data">
+        <div class="alert alert-danger" *ngIf="loginFailed">
+          <strong>Login Failed!</strong> Email or Password didnt match.
+        </div>
+        <div class="form-group">
+          <label for="description">Post Description:</label>
+          <textarea class="form-control"  name="description" id="description" required="" [(ngModel)]="PostForm.text"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="image">Upload img or video:</label>
+          <input id="image" name="image" type="file" [(ngModel)]="PostForm.file">
+        </div>
+        <!--<div class="form-check">-->
+        <!--<label class="form-check-label">-->
+        <!--<input class="form-check-input" type="checkbox"> Remember me-->
+        <!--</label>-->
+        <!--</div>-->
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+  </ng-template>
+
 </div>

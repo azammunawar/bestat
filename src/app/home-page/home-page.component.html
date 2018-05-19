@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row clearfix">
-    <div class="col-md-6 col-xs-12">
-      <div *ngFor="let post of posts" class="video_post">
+    <div class="col-md-4 col-xs-12">
+      <div *ngFor="let post of posts | postFilter"  class="video_post" >
         <div class="video_thumb">
           <img src="{{post.post_img}}"  alt=""/>
           <a href="#" class="share"></a>
@@ -10,7 +10,6 @@
           <div class="u_img"><img src="assets/images/video_byuser.jpg"  alt=""/></div>
           <div class="right_meta">
             <div class="user_name">{{post.name}}</div>
-            <div class="category"><a href="#">Sports</a>  >  <a href="#">Basketball</a> > <span>Dunks</span></div>
             <div class="clear"></div>
             <div class="time_loc">
               <div class="time fl">{{post.created_at}}</div>
@@ -25,68 +24,28 @@
             <a class="become_fan inline_block action" href="#">Become a Fan</a>
             <span class="fr"><img src="assets/images/avatar.png"  alt=""/></span>
           </div>
-          <div class="comment-section">
+          <div *ngIf="post.comments_list.length" class="comment-section">
             <div class="">
-              <div class="comment clearfix">
+              <div *ngFor="let comment of post.comments_list" class="comment clearfix">
                 <div class="coment_by">
-                  <div class="img"><img src="assets/images/bb.jpg"></div>
+                  <div class="img"><img src="{{comment.user_img}}"></div>
                   <div class="name">
-                    <span>AbuBakar Butt</span>
+                    <span>{{comment.user_name}}</span>
                     <span class="like">1hr ago</span>
                   </div>
                   <div class="clear"></div>
                 </div>
                 <div class="comment_text">
-                  This video is just amazing. This video is just amazing.
-
+                  {{comment.comment_text}}
                 </div>
               </div>
-              <div class="comment clearfix">
-                <div class="coment_by">
-                  <div class="img"><img src="assets/images/bb.jpg"></div>
-                  <div class="name">
-                    <span>AbuBakar Butt</span>
-                    <span class="like">1hr ago</span>
-                  </div>
-                  <div class="clear"></div>
-                </div>
-                <div class="comment_text">
-                  This video is just amazing. This video is just amazing.
-
-                </div>
-              </div>
-              <div class="comment clearfix">
-                <div class="coment_by">
-                  <div class="img"><img src="assets/images/bb.jpg"></div>
-                  <div class="name">
-                    <span>AbuBakar Butt</span>
-                    <span class="like">1hr ago</span>
-                  </div>
-                  <div class="clear"></div>
-                </div>
-                <div class="comment_text">
-                  This video is just amazing. This video is just amazing.
-                  This video is just amazing. This video is just amazing. This video is just amazing. This video is just amazing. This video is just amazing. This video is just amazing.
-                </div>
-              </div>
-            </div>
-            <div class="comment clearfix">
-              <form>
-                <div class="coment_by">
-                  <div class="img"><img src="assets/images/bb.jpg"></div>
-                </div>
-                <div class="comment_text">
-                  <textarea placeholder="Write a comment"></textarea>
-
-                </div>
-              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-md-6 col-xs-12">
-      <div *ngFor="let post of posts" class="video_post">
+    <div class="col-md-4 col-xs-12">
+      <div *ngFor="let post of posts | postFilter2"  class="video_post" >
         <div class="video_thumb">
           <img src="{{post.post_img}}"  alt=""/>
           <a href="#" class="share"></a>
@@ -95,7 +54,6 @@
           <div class="u_img"><img src="assets/images/video_byuser.jpg"  alt=""/></div>
           <div class="right_meta">
             <div class="user_name">{{post.name}}</div>
-            <div class="category"><a href="#">Sports</a>  >  <a href="#">Basketball</a> > <span>Dunks</span></div>
             <div class="clear"></div>
             <div class="time_loc">
               <div class="time fl">{{post.created_at}}</div>
@@ -110,67 +68,70 @@
             <a class="become_fan inline_block action" href="#">Become a Fan</a>
             <span class="fr"><img src="assets/images/avatar.png"  alt=""/></span>
           </div>
-          <div class="comment-section">
+          <div *ngIf="post.comments_list.length" class="comment-section">
             <div class="">
-              <div class="comment clearfix">
+              <div *ngFor="let comment of post.comments_list" class="comment clearfix">
                 <div class="coment_by">
-                  <div class="img"><img src="assets/images/bb.jpg"></div>
+                  <div class="img"><img src="{{comment.user_img}}"></div>
                   <div class="name">
-                    <span>AbuBakar Butt</span>
+                    <span>{{comment.user_name}}</span>
                     <span class="like">1hr ago</span>
                   </div>
                   <div class="clear"></div>
                 </div>
                 <div class="comment_text">
-                  This video is just amazing. This video is just amazing.
-
+                  {{comment.comment_text}}
                 </div>
               </div>
-              <div class="comment clearfix">
-                <div class="coment_by">
-                  <div class="img"><img src="assets/images/bb.jpg"></div>
-                  <div class="name">
-                    <span>AbuBakar Butt</span>
-                    <span class="like">1hr ago</span>
-                  </div>
-                  <div class="clear"></div>
-                </div>
-                <div class="comment_text">
-                  This video is just amazing. This video is just amazing.
-
-                </div>
-              </div>
-              <div class="comment clearfix">
-                <div class="coment_by">
-                  <div class="img"><img src="assets/images/bb.jpg"></div>
-                  <div class="name">
-                    <span>AbuBakar Butt</span>
-                    <span class="like">1hr ago</span>
-                  </div>
-                  <div class="clear"></div>
-                </div>
-                <div class="comment_text">
-                  This video is just amazing. This video is just amazing.
-                  This video is just amazing. This video is just amazing. This video is just amazing. This video is just amazing. This video is just amazing. This video is just amazing.
-                </div>
-              </div>
-            </div>
-            <div class="comment clearfix">
-              <form>
-                <div class="coment_by">
-                  <div class="img"><img src="assets/images/bb.jpg"></div>
-                </div>
-                <div class="comment_text">
-                  <textarea placeholder="Write a comment"></textarea>
-
-                </div>
-              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+    <div class="col-md-4 col-xs-12">
+      <div *ngFor="let post of posts | postFilter3"  class="video_post" >
+        <div class="video_thumb">
+          <img src="{{post.post_img}}"  alt=""/>
+          <a href="#" class="share"></a>
+        </div>
+        <div class="video_meta">
+          <div class="u_img"><img src="assets/images/video_byuser.jpg"  alt=""/></div>
+          <div class="right_meta">
+            <div class="user_name">{{post.name}}</div>
+            <div class="clear"></div>
+            <div class="time_loc">
+              <div class="time fl">{{post.created_at}}</div>
+              <div class="location fl">{{post.location}}</div>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div class="post_actions clearfix">
+            <a class="like action" href="#">{{post.likes}}</a>
+            <a class="comments action" href="#">{{post.comments}}</a>
+            <a class="hottest action" href="#">{{post.hottest}}</a>
+            <a class="become_fan inline_block action" href="#">Become a Fan</a>
+            <span class="fr"><img src="assets/images/avatar.png"  alt=""/></span>
+          </div>
+          <div *ngIf="post.comments_list.length" class="comment-section">
+            <div class="">
+              <div *ngFor="let comment of post.comments_list" class="comment clearfix">
+                <div class="coment_by">
+                  <div class="img"><img src="{{comment.user_img}}"></div>
+                  <div class="name">
+                    <span>{{comment.user_name}}</span>
+                    <span class="like">1hr ago</span>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="comment_text">
+                  {{comment.comment_text}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
-</div>
+  </div>

@@ -1531,7 +1531,7 @@ body {
   margin-bottom: 0px;
 }
 .video_post .u_img {
-  border: solid 7px #fff;
+  border: solid 3px #fff;
   border-radius: 100%;
   overflow: hidden;
   float: left;
@@ -1543,7 +1543,6 @@ body {
   background:#edf1f2;
   z-index: 99;
   top: 100%;
-  display: none;
 }
 .video_post .video_meta {
   position: relative;
@@ -2211,7 +2210,7 @@ label {
     margin-top:-35px;
   }
   .video_post .comment-section .coment_by .name, .video_post.feat .posted_t, .video_post.feat .location {
-    font-size: 16px;
+    font-size: 14px;
   }
   .video_post .comment-section .comment_text {
     font-size: 15px;
@@ -2224,7 +2223,7 @@ label {
     font-size: 16px;
   }
   .video_post .time, .video_post .location {
-    font-size: 14px;
+    font-size: 12px;
   }
   #logo {
     max-width:80px;
@@ -2236,7 +2235,7 @@ label {
     padding: 10px 15px;
   }
   .post_actions .action {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .btn_blue {
@@ -2355,8 +2354,8 @@ label {
     height: 240px;
   }
   .video_post .u_img {
-    height: 75px;
-    width: 75px;
+    height: 65px;
+    width: 65px;
     top: -50px;
     margin-bottom: -50px;
   }
@@ -2524,9 +2523,9 @@ label {
     font-size: 18px;
   }
   .video_post .user_name {
-    font-size: 28px;
+    font-size: 20px;
     color: #a6b2b8;
-    line-height: 1;
+    line-height: 1.5;
   }
   .video_post .time, .video_post .location {
     margin-right: 20px;
